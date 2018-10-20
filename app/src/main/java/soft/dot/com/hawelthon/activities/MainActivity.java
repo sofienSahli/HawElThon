@@ -1,6 +1,5 @@
 package soft.dot.com.hawelthon.activities;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,12 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import soft.dot.com.hawelthon.R;
-import soft.dot.com.hawelthon.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ActivityMainBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
