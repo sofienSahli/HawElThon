@@ -1,4 +1,4 @@
-package soft.dot.com.hawelthon.Activities;
+package soft.dot.com.hawelthon.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
