@@ -36,7 +36,7 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
                 sign_in_user();
                 break;
             case R.id.button:
-                Intent intent = new Intent(this, SignUp_Activity.class);
+                Intent intent = new Intent(this, soft.dot.com.hawelthon.Activities.SignUp_Activity.class);
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 break;
         }
