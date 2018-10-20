@@ -1,4 +1,4 @@
-package soft.dot.com.hawelthon.Activities;
+package soft.dot.com.hawelthon.activities;
 
 import android.app.ActivityOptions;
 import android.content.Context;
