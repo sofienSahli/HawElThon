@@ -21,7 +21,7 @@ public class RetrofitClient extends AppCompatActivity {
 
     protected Retrofit retrofit;
 
-    public Retrofit getRetrofit() {
+      public Retrofit getRetrofit() {
         return retrofit;
     }
 
