@@ -1,17 +1,10 @@
 package soft.dot.com.hawelthon.activities;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,13 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import soft.dot.com.hawelthon.R;
 import soft.dot.com.hawelthon.activities.add.service.AddServiceActivity;
 import soft.dot.com.hawelthon.activities.home.HomeFragment;
-import soft.dot.com.hawelthon.databinding.ActivityMainBinding;
+import soft.dot.com.hawelthon.activities.home.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -114,11 +107,22 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_logout) {
 
+        } else if (id == R.id.profil) {
+            commintFragment(new ProfileFragment());
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void commintFragment(Fragment fragment) {
+
+        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.mainActivity_content, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 
 }

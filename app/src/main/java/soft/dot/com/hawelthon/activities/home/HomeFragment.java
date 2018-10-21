@@ -1,6 +1,5 @@
 package soft.dot.com.hawelthon.activities.home;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -48,10 +47,18 @@ public class HomeFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.homeFragment_rcv);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mListPosts.add(new Post(1, "https://images.wallpaperscraft.com/image/man_sitting_chair_90508_1920x1080.jpg", "dazdzad"));
-        mListPosts.add(new Post(2, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "fzefffff"));
+        mListPosts.add(new Post(1, "https://images.wallpaperscraft.com/image/man_sitting_chair_90508_1920x1080.jpg", "J'ai une voiture occasion à vendre/échanger contre des cours particulers pour mon fils et ceux sur la durée d'une de 3 ans à hauteur de 3 heures par semaines"));
+        mListPosts.add(new Post(2, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
+        mListPosts.add(new Post(4, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
+        mListPosts.add(new Post(5, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
+        mListPosts.add(new Post(43, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
+        mListPosts.add(new Post(12, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
+        mListPosts.add(new Post(532, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
+        mListPosts.add(new Post(12412, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
+        mListPosts.add(new Post(1412, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
+        mListPosts.add(new Post(2523, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "Surfeur amateur désire vendre/échanger sa planche contre un skateboard"));
 
-        mRecyclerView.setAdapter(new PostsAdapter(mListPosts));
+        mRecyclerView.setAdapter(new PostsAdapter(mListPosts, getActivity()));
 
         return view;
     }
@@ -61,7 +68,6 @@ public class HomeFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
 
 
     @Override
