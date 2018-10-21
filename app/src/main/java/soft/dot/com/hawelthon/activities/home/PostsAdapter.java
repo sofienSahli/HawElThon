@@ -1,11 +1,16 @@
 package soft.dot.com.hawelthon.activities.home;
 
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
 
 import java.util.List;
 
@@ -42,15 +47,23 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsViewHol
 
         TextView username;
         TextView description;
+        ImageView postImage;
 
         public PostsViewHolder(@NonNull View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.itemPost_txv_username);
             description = itemView.findViewById(R.id.itemPost_txv_description);
+            postImage = itemView.findViewById(R.id.itemPost_img_post);
         }
 
         private void bindItem(Post post){
             description.setText(post.getDescription());
+            RequestBuilder<Bitmap> requestBuilder = Glide.with(itemView.getContext())
+                    .asBitmap();
+//                    .placeholder(R.drawable.ic_picture_profile);
+//                .skipMemoryCache(true)
+//                .signature(new ObjectKey(String.valueOf(System.currentTimeMillis())));
+            requestBuilder.load(post.getImage()).into(postImage);
         }
     }
 }

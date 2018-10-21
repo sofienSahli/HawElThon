@@ -3,7 +3,7 @@ package soft.dot.com.hawelthon.activities.home;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -48,8 +48,8 @@ public class HomeFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.homeFragment_rcv);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mListPosts.add(new Post(1, "erferf"));
-        mListPosts.add(new Post(2, "ffff"));
+        mListPosts.add(new Post(1, "https://images.wallpaperscraft.com/image/man_sitting_chair_90508_1920x1080.jpg", "dazdzad"));
+        mListPosts.add(new Post(2, "https://images.wallpaperscraft.com/image/man_car_sand_sitting_surfer_ferfing_55200_1920x1080.jpg", "fzefffff"));
 
         mRecyclerView.setAdapter(new PostsAdapter(mListPosts));
 
@@ -62,16 +62,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+
 
     @Override
     public void onDetach() {
